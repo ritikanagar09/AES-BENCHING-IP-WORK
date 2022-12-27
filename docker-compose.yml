@@ -1,0 +1,21 @@
+version: '3'
+services:
+      py1:
+        image: python-demo:latest
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        container_name: p1
+        volumes:
+          -   .:/demo
+        command: python3 hello.py
+              
+      py2:
+        image: python-demo:latest
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: p2
+        volumes:
+          -   .:/demo
+        command: python3 hello.py
